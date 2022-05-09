@@ -7,3 +7,6 @@
 [submodule "dmenu"]
 	path = dmenu
 	url = git@github.com:NebulaBC/dmenu
+[submodule "zara"]
+	path = zara
+	url = git@github.com:NebulaBC/zara
