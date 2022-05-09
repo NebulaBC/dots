@@ -1,0 +1,2 @@
+~/.xinit.sh &
+dwm
