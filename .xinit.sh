@@ -1,5 +1,5 @@
-xinput --set-prop 12 310 -1
-[ ! -d "/run/media/neb/storage/" ] && udisksctl mount -b /dev/sdb1
-feh --bg-scale ~/dox/wallpapers/gentoo.png
+export BROWSER="firefox"
+setxkbmap -option caps:escape
+feh --bg-scale ~/dox/wallpapers/wallpapers/0016.jpg
 xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
-zara
+~/go/bin/zara
