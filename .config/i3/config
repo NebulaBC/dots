@@ -14,6 +14,7 @@ bindsym $super+p exec i3-dmenu-desktop --dmenu='dmenu -m 0 -fn "Comic Mono:size=
 bindsym $super+b exec firefox
 bindsym $super+d exec flatpak run com.discordapp.Discord
 bindsym $super+s exec screenshot
+bindsym $super+Tab exec alacritty -e bash -c "toolbox enter music"
 
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+
 bindsym XF86AudioLowerVolume exec amixer -q set Master 5%-
@@ -74,7 +75,7 @@ bindsym $super+r mode "resize"
 
 bar {
 	position top
-        status_command i3blocks
+        status_command ~/.local/bin/i3blocks
 	strip_workspace_numbers yes
 	colors {
         	background #112c27
