@@ -1,0 +1,4 @@
+#!/bin/bash
+filename="$(date +%d-%b-flameshot)-$RANDOM.png"
+gnome-screenshot -a -f $HOME/dox/pics/$filename
+curl -H "Content-Type: multipart/form-data" -H "embed: true" -H "authorization: mytoken" -F file="@$HOME/dox/pics/$filename" https://i.neb.cx/api/upload | jq -r '.files | .[]' | tr -d '\n' | xsel -ib

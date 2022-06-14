@@ -10,3 +10,6 @@
 [submodule "zara"]
 	path = zara
 	url = git@github.com:NebulaBC/zara
+[submodule "dox/pics/wallpapers"]
+	path = dox/pics/wallpapers
+	url = https://gitlab.com/dwt1/wallpapers

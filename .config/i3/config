@@ -1,0 +1,108 @@
+set $super Mod4
+font pango: Comic Mono 10
+floating_modifier $super
+
+gaps inner 20
+gaps outer 0
+exec --no-startup-id feh --bg-fill ~/dox/pics/wallpapers/0016.jpg
+exec --no-startup-id xinput --set-prop 12 311 -1
+
+bindsym $super+Return exec alacritty
+bindsym $super+Shift+q exec i3 exit
+
+bindsym $super+p exec i3-dmenu-desktop --dmenu='dmenu -m 0 -fn "Comic Mono:size=12" -nb "#112c27" -nf "#9D8420" -sb "#112c27" -sf "#82A6B1"' 
+bindsym $super+b exec firefox
+bindsym $super+d exec flatpak run com.discordapp.Discord
+bindsym $super+s exec screenshot
+
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+
+bindsym XF86AudioLowerVolume exec amixer -q set Master 5%-
+bindsym XF86AudioMute exec amixer -D pulse set Master 1+ toggle
+
+bindsym $super+c kill
+
+bindsym $super+j focus left
+bindsym $super+k focus right
+
+bindsym $super+Shift+j move left
+bindsym $super+Shift+k move right
+
+bindsym $super+f fullscreen toggle
+
+bindsym $super+shift+space floating toggle
+
+bindsym $super+Shift+r restart
+
+set $ws1 "trm"
+set $ws2 "www"
+set $ws3 "dsc"
+set $ws4 "file"
+set $ws5 "misc"
+set $ws6 "misc"
+set $ws7 "misc"
+set $ws8 "tune"
+set $ws9 "brd"
+
+bindsym $super+1 workspace $ws1
+bindsym $super+2 workspace $ws2
+bindsym $super+3 workspace $ws3
+bindsym $super+4 workspace $ws4
+bindsym $super+5 workspace $ws5
+bindsym $super+6 workspace $ws6
+bindsym $super+7 workspace $ws7
+bindsym $super+8 workspace $ws8
+bindsym $super+9 workspace $ws9
+
+bindsym $super+Shift+1 move container to workspace $ws1
+bindsym $super+Shift+2 move container to workspace $ws2
+bindsym $super+Shift+3 move container to workspace $ws3
+bindsym $super+Shift+4 move container to workspace $ws4
+bindsym $super+Shift+5 move container to workspace $ws5
+bindsym $super+Shift+6 move container to workspace $ws6
+bindsym $super+Shift+7 move container to workspace $ws7
+bindsym $super+Shift+8 move container to workspace $ws8
+bindsym $super+Shift+9 move container to workspace $ws9
+
+mode "resize" {
+        bindsym Left resize shrink width 5 px or 5 ppt
+        bindsym Down resize grow height 5 px or 5 ppt
+        bindsym Up resize shrink height 5 px or 5 ppt
+        bindsym Right resize grow width 5 px or 5 ppt
+        bindsym Return mode "default"
+}
+bindsym $super+r mode "resize"
+
+bar {
+	position top
+        status_command i3blocks
+	colors {
+        	background #112c27
+	        statusline #9D8420
+	        separator #9D8420
+	
+	        focused_workspace       #112c27 #112c27 #82A6B1
+	        active_workspace        #112c27 #112c27 #82A6B1
+	        inactive_workspace      #112c27 #112c27 #9D8420
+	        urgent_workspace       #112c27 #112c27 #9D8420
+    }
+}
+
+for_window [class=".*"] border pixel 4
+assign [class=URxvt] 1
+assign [class=Discord] 3
+assign [class=Firefox|Transmission-gtk] 1
+assign [class=Thunar|File-roller] 1
+assign [class=Geany|Evince|Gucharmap|Soffice|libreoffice*] 1
+assign [class=Audacity|Vlc|mpv|Ghb|Xfburn|Gimp*|Inkscape] 1
+assign [class=Lxappearance|System-config-printer.py|Lxtask|GParted|Pavucontrol|Exo-helper*|Lxrandr|Arandr] 1
+for_window [class=Viewnior|feh|Audacious|File-roller|Lxappearance|Lxtask|Pavucontrol] floating enable
+for_window [class=URxvt|Firefox|Geany|Evince|Soffice|libreoffice*|mpv|Ghb|Xfburn|Gimp*|Inkscape|Vlc|Lxappearance|Audacity] focus
+for_window [class=Xfburn|GParted|System-config-printer.py|Lxtask|Pavucontrol|Exo-helper*|Lxrandr|Arandr] focus
+
+client.focused              #9D8420 #112c27 #942911 #942911 #942911
+client.focused_inactive     #112c27 #112c27 #9D8420 #2f343f #112c27
+client.unfocused            #2f343f #2f343f #9D8420 #2f343f #2f343f
+client.urgent               #112c27 #112c27 #9D8420 #2f343f #112c27
+client.placeholder          #112c27 #112c27 #9D8420 #2f343f #112c27
+client.background           #2f343f
+
