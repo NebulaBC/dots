@@ -33,15 +33,15 @@ bindsym $super+shift+space floating toggle
 
 bindsym $super+Shift+r restart
 
-set $ws1 "trm"
-set $ws2 "www"
-set $ws3 "dsc"
-set $ws4 "file"
-set $ws5 "misc"
-set $ws6 "misc"
-set $ws7 "misc"
-set $ws8 "tune"
-set $ws9 "brd"
+set $ws1 "1:trm"
+set $ws2 "2:www"
+set $ws3 "3:dsc"
+set $ws4 "4:file"
+set $ws5 "5:misc"
+set $ws6 "6:misc"
+set $ws7 "7:misc"
+set $ws8 "8:tune"
+set $ws9 "9:cast"
 
 bindsym $super+1 workspace $ws1
 bindsym $super+2 workspace $ws2
@@ -75,6 +75,7 @@ bindsym $super+r mode "resize"
 bar {
 	position top
         status_command i3blocks
+	strip_workspace_numbers yes
 	colors {
         	background #112c27
 	        statusline #9D8420
